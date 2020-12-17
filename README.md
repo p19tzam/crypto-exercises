@@ -26,6 +26,8 @@ def rand():
     srand.k = (srand.k + 1) % 34
     return r
 ```
+<br>
+<br>
 
 Η `generate_random_key(KEYSIZE)` παιρνει ως όρισμα το KEYSIZE δηλαδή το μήκος του key που θέλουμε να κάνουμε generate και φτιάχνει ενα key KEYSIZE bytes. 
 
@@ -50,9 +52,16 @@ key = b' '
 
 Μετά απο τον ορισμό της μεταβλητής key έχουμε την for loop που loopαρει για KEYSIZE φορές(δηλαδή όσο είναι το KEYSIZE τόσα bytes θα είναι το key μας) Στην δικια μας περίπτωση  θα loopαρει για 16 φορές και το generated key μας θα είναι 16bytes.
 
-Με το που μπει το script μας μέσα στην <b>for</b> θα κάνει κάθε 1 byte που κάνει generate απο την rand()%256(όπως στο C script) πρόσθεση στα ήδη καταχωρημένα bytes που είτε είχε κάνει generate είτε η μεταβλητη key ηταν κενή.
+Με το που μπει το script μας μέσα στην <b>for</b> θα κάνει κάθε 1 byte που κάνει generate απο την <b>rand()%256</b>(όπως στο C script) πρόσθεση στα ήδη καταχωρημένα bytes που είτε είχε κάνει generate είτε η μεταβλητη key είναι κενή.
+
+Αυτό γίνεται για KEYSIZE φορές δηλαδή κάθε φορά κάνει generate 1byte τα προσθέτει με τα ήδη καταχωρημένα bytes και στο exit της loop κάνουμε `return` το key μας για να χρησιμοποιηθεί στο πρόγραμμα μας.
+
+
+επίσης με την function `bytes()` επιστρέφουμε bytes που είναι μια αμετάβλητα δηλαδή δεν μπορούν να τροποποιηθούν.
+
 
 ```python
 for i in range(KEYSIZE):
 	key += bytes([rand()%256])
+return key
 ```
