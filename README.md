@@ -119,7 +119,7 @@ return key
 Πρώτα απο όλα ο καθηγητής μας δίνει δύο πολύ σημαντικές πληροφορίες στην εκφώνηση.<br>
 Το IV και τα magicbytes του PDF αρχείου πριν κρυπτογραφηθεί σε hex. <br><br>
 
-IV = `61f6ef5c567fbcfb99961becdd0954e0` (16 bytes) <br>
+IV                 = `61f6ef5c567fbcfb99961becdd0954e0` (16 bytes) <br>
 Magic Bytes = `255044462d312e370a25e2e3cfd30a34` (16 bytes)
 
 
