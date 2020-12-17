@@ -141,4 +141,4 @@ KEYSIZE=16 #Αρχικοποίηση το μήκος του key σε μια glob
 ```python
 with open('important.enc.pdf','rb') as encrypted_pdf_file:
 	ciphertext=encrypted_pdf_file.read()
-``
+```
