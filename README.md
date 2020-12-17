@@ -179,6 +179,26 @@ from Crypto.Cipher import AES
 	plaintext=cipher.decrypt(ciphertext)
 ```
 
+<br>
 
+Λοιπόν πάμε στο τέλος του προγράμματος και στο κομμάτι που ελέγχουμε τα 16 πρώτα bytes απο το `plaintext` και βλέπουμε αν είναι ίδια με τα δικά μας magicbytes.<br>
+
+If: αν τα πρώτα bytes(32 hexdata) απο το plaintext είναι ίσα με τα δικα μας magic bytes τότε εμφανίζεται το key και ανοίγει/δημιουργεί το αρχείο με όνομα `important.pdf` για write σε binary format. Και τέλος κάνει ενα break για να σταματησει η επίθεση brute force. <br>
+
+<pre>
+type(plaintext)=bytes πρέπει να το κάνουμε μετατροπή σε hex(γιατί τα magic bytes που μας δόθηκαν ειναι σε hex)
+type(plaintext.hex())=hex μετατροπή σε hex απο bytes
+type(plaintext.hex().encode())=b’hexdata’ μετατροπή απο hex σε bytes για να ολοκληρώσουμε την συνθήκη.
+</pre>
+
+```python
+if plaintext.hex()[0:32].encode()==magicb: 
+		os.system("clear")
+		print("\n\n[!]=> Found key for decryption(bytes): ",tempkey)
+		with open('important.pdf','wb') as decrypted_pdf_file:
+			decrypted_pdf_file.write(plaintext)
+		break
+
+```
 
 Key for decryption =` b'-\xbe\xf8\x07G\xd6\xf1\xce~\x18%\xed\xc7j\xee\x9d' `
