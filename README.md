@@ -113,3 +113,15 @@ return key
 
 Το σωστό [seed](https://github.com/p19tzam/crypto-2/blob/main/README.md#seed) είναι: `1606212503` δηλαδή είναι ο αριθμός που θα βάλουμε στην [srand()](https://github.com/p19tzam/crypto-2/blob/main/README.md#srand-seed) για να κάνουμε αρχικοποίηση την στιγμή που έγινε generate το key απο το ransomware.
 
+<br>
+<br>
+Ας ξεκινήσουμε με τον κώδικα <br>
+Πρώτα απο όλα ο καθηγητής μας δίνει δύο πολύ σημαντικές πληροφορίες στην εκφώνηση.<br>
+Το IV και τα magicbytes του PDF αρχείου πριν κρυπτογραφηθεί σε hex. <br><br>
+
+IV = `61f6ef5c567fbcfb99961becdd0954e0` (16 bytes)
+Magic Bytes = `255044462d312e370a25e2e3cfd30a34` (16 bytes)
+
+
+
+
