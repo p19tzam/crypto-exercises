@@ -125,8 +125,8 @@ Magic Bytes = `255044462d312e370a25e2e3cfd30a34` (16 bytes)
 <br>
 
 ```python 
-srand(1606212503) # Αρχικοποίηση την στιγμή που έγινε generate το key απο το ransomware
-iv=bytes.fromhex('61f6ef5c567fbcfb99961becdd0954e0') # Αρχικοποίηση και μετατροπή του IV απο hex σε bytes 
+srand(1606212503) #Αρχικοποίηση την στιγμή που έγινε generate το key απο το ransomware
+iv=bytes.fromhex('61f6ef5c567fbcfb99961becdd0954e0') #Αρχικοποίηση και μετατροπή του IV απο hex σε bytes 
 magicb=b'255044462d312e370a25e2e3cfd30a34' #Αρχικοποίηση τα magic bytes σε μια μεταβλητή τύπου bytes
-KEYSIZE=16 # Αρχικοποίηση το μήκος του key σε μια global μεταβλητή
+KEYSIZE=16 #Αρχικοποίηση το μήκος του key σε μια global μεταβλητή
 ```
