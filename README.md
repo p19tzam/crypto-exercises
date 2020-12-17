@@ -111,5 +111,5 @@ return key
 Τώρα θα πρέπει να μετατρέψουμε αυτο το date: `Tue, Nov 24 2020 17:08:23` σε epoch. <br>
 Αυτό μπορούμε να το κάνουμε είτε με script είτε online. <br>
 
-`Το σωστό [seed](https://github.com/p19tzam/crypto-2/blob/main/README.md#seed) είναι: `1606212503` δηλαδή είναι ο αριθμός που θα βάλουμε στην [srand()](https://github.com/p19tzam/crypto-2/blob/main/README.md#srand-seed) για να κάνουμε αρχικοποίηση την στιγμή που έγινε generate το key απο το ransomware.
+Το σωστό [seed](https://github.com/p19tzam/crypto-2/blob/main/README.md#seed) είναι: `1606212503` δηλαδή είναι ο αριθμός που θα βάλουμε στην [srand()](https://github.com/p19tzam/crypto-2/blob/main/README.md#srand-seed) για να κάνουμε αρχικοποίηση την στιγμή που έγινε generate το key απο το ransomware.
 
