@@ -140,3 +140,27 @@ KEYSIZE=16 #Αρχικοποίηση το μήκος του key σε μια glob
 with open('important.enc.pdf','rb') as encrypted_pdf_file: #Ανοίγω το encrypted pdf αρχείο για ανάγνωση μόνο σε binary format.
 	ciphertext=encrypted_pdf_file.read() #Διαβάζω τα binary περιεχόμενα του encrypted pdf αρχείου.
 ```
+
+<br>
+
+
+Όπως βλέπουμε στο παρακάτω κομμάτι κώδικα έχουμε ενα for loop που ξεκινάει απο τον αριθμό `1606212503` δηλαδή ξεκινάει απο το [seed](https://github.com/p19tzam/crypto-2/blob/main/README.md#seed) που αρχικοποιώ παραπάνω και σε κάθε loop το [seed](https://github.com/p19tzam/crypto-2/blob/main/README.md#seed) μας ανεβαίνει +1 κάθε φορά. Στην ουσία όταν αλλάζει το [seed](https://github.com/p19tzam/crypto-2/blob/main/README.md#seed) ταυτόχρονα είναι σαν αλλάζει 
+
+
+```python
+import itertools
+
+srand(1606212503)
+
+for i in itertools.count(start=1606212503)
+	srand(i)
+```
+
+
+
+
+
+
+
+
+Key for decryption =` b'-\xbe\xf8\x07G\xd6\xf1\xce~\x18%\xed\xc7j\xee\x9d' `
