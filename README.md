@@ -147,7 +147,7 @@ with open('important.enc.pdf','rb') as encrypted_pdf_file: #Ανοίγω το en
 Όπως βλέπουμε στο παρακάτω κομμάτι κώδικα έχουμε ενα for loop που ξεκινάει απο τον αριθμό `1606212503` δηλαδή ξεκινάει απο το [seed](https://github.com/p19tzam/crypto-2/blob/main/README.md#seed) που αρχικοποιώ παραπάνω και σε κάθε loop το [seed](https://github.com/p19tzam/crypto-2/blob/main/README.md#seed) μας ανεβαίνει +1 κάθε φορά. Στην ουσία όταν αλλάζει το [seed](https://github.com/p19tzam/crypto-2/blob/main/README.md#seed) ταυτόχρονα είναι σαν να αλλάζει η ώρα αλλα σε μορφή epoch.
 Και τέλος αυτού του κομματιού κανουμε νεα αρχικοποίηση κάθε φορα για την νεα στιγμή που έγινε generate το key απο το ransomware.<br>
 
-Για να υλοποιήσω το start το for apo to seed που θέλω χρισημοποίησα το itertools module και το .count() function.<br>
+Για να υλοποιήσω το start του for απο τον αριθμό του [seed](https://github.com/p19tzam/crypto-2/blob/main/README.md#seed) που θέλω χρισημοποίησα το itertools module και το .count() function.<br>
 
 ```python
 import itertools
