@@ -158,10 +158,26 @@ for i in itertools.count(start=1606212503)
 	srand(i)
 ```
 
+<br>
 
 
+Λοιπόν τώρα πρέπει να κάνουμε “grab” τα 16 πρώτα bytes απο τα magic bytes του κάθε key που θα δοκιμαστεί και να τα συγκρίνω με τα magic bytes που μας δόθηκε. <br>
+Προτού γίνει αυτό πρώτα πρέπει να καλέσουμε την `generate_random_key(KEYSIZE)` για να γίνει το key generate. <br>
+<br>
+Δημιουργούμε την μεταβλητή `cipher` και καλούμε την συνάρτηση `.new()` που παίρνει ως ορίσματα το key(στην περίπτωση μας κάνουμε brute force attack), το mode του AES και το IV που μας έχει δοθεί. <br>
 
+Επίσης θα χρειαστούμε την μεταβλητή `plaintext` που καλούμε την συνάρτηση `.decrypt()`
+Που παιρνει ως όρισμα ciphertext που είναι το αρχείο που ανοίξαμε να διαβάσουμε έξω απο την loop για binary format read και το κανει decrypt.
 
+```python
+from Crypto.Cipher import AES
+
+	tempkey=generate_random_key(KEYSIZE)
+
+	cipher=AES.new(tempkey,AES.MODE_CBC,iv)
+
+	plaintext=cipher.decrypt(ciphertext)
+```
 
 
 
