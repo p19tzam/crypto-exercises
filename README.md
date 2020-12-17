@@ -1,14 +1,8 @@
-
 # Crypto excercise 2
 
 
-Η
-```python 
-def generate_random_key(KEYSIZE):
-```
-και η `rand()` είναι python implementations της `srand()` και `rand()` απο την C.
+Η ```python srand(seed)``` και η `rand()` είναι python implementations της `srand()` και `rand()` απο την C.
 Διαφορετικά αυτό το πράγμα δεν μπορεί να δουλέψει γιατί δεν χρησιμοποιούν τις ίδιες random η C με την python. Επομένως οτι seed να βάλουμε στην python στην αντίστοιχη random δεν θα δουλέψει.
-
 
 
 ```python
@@ -33,12 +27,27 @@ def rand():
     return r
 ```
 
-dsadsaasdsadsd
+Η `generate_random_key(KEYSIZE)` παιρνει ως όρισμα το KEYSIZE δηλαδή το μήκος του key που θέλουμε να κάνουμε generate και φτιάχνει ενα key KEYSIZE bytes. 
 
 ```python
 def generate_random_key(KEYSIZE): 
-	key = b''
+	key = b' '
 	for i in range(KEYSIZE):
  		key += bytes([rand()%256])
 	return key
 ```
+
+
+<br>
+Αμέσως μετά ορίζω την μεταβλητή `key = b' '` δηλαδή μια κενή μεταβλητή που έχει type() bytes που στην πορεία θα γίνει generate το key και θα προστεθεί μέσα σε αυτή την μεταβλητή.
+
+```python
+key += bytes([rand()%256])
+```
+
+
+<br>
+
+Μετά απο τον ορισμό της μεταβλητής key έχουμε την for loop που loopαρει για KEYSIZE φορές(δηλαδή όσο είναι το KEYSIZE τόσα bytes θα είναι το key μας) Στην δικια μας περίπτωση  θα loopαρει για 16 φορές και το generated key μας θα είναι 16bytes.
+
+
