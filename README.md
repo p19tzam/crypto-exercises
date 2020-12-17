@@ -42,7 +42,7 @@ def generate_random_key(KEYSIZE):
 Αμέσως μετά ορίζω την μεταβλητή `key = b' '` δηλαδή μια κενή μεταβλητή που έχει type() bytes που στην πορεία θα γίνει generate το key και θα προστεθεί μέσα σε αυτή την μεταβλητή.
 
 ```python
-key += bytes([rand()%256])
+key = b' '
 ```
 
 
@@ -50,4 +50,9 @@ key += bytes([rand()%256])
 
 Μετά απο τον ορισμό της μεταβλητής key έχουμε την for loop που loopαρει για KEYSIZE φορές(δηλαδή όσο είναι το KEYSIZE τόσα bytes θα είναι το key μας) Στην δικια μας περίπτωση  θα loopαρει για 16 φορές και το generated key μας θα είναι 16bytes.
 
+Με το που μπει το script μας μέσα στην <b>for</b> θα κάνει κάθε 1 byte που κάνει generate απο την rand()%256(όπως στο C script) πρόσθεση στα ήδη καταχωρημένα bytes που είτε είχε κάνει generate είτε η μεταβλητη key ηταν κενή.
 
+```python
+for i in range(KEYSIZE):
+	key += bytes([rand()%256])
+```
