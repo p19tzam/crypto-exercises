@@ -189,6 +189,7 @@ If: αν τα πρώτα bytes(32 hexdata) απο το plaintext είναι ίσ
 type(plaintext)=bytes πρέπει να το κάνουμε μετατροπή σε hex(γιατί τα magic bytes που μας δόθηκαν ειναι σε hex)
 type(plaintext.hex())=hex μετατροπή σε hex απο bytes
 type(plaintext.hex().encode())=b’hexdata’ μετατροπή απο hex σε bytes για να ολοκληρώσουμε την συνθήκη.
+[0:32] = παίρνουμε τα πρώτα 32 hex data απο την plaintext μεταβλητή.
 </pre>
 
 ```python
