@@ -118,11 +118,15 @@ return key
 
 ### Ας ξεκινήσουμε με τον κώδικα <br>
 Πρώτα απο όλα ο καθηγητής μας δίνει δύο πολύ σημαντικές πληροφορίες στην εκφώνηση.<br>
-Το IV και τα magicbytes του PDF αρχείου πριν κρυπτογραφηθεί σε hex. <br><br>
+Το IV και τα magicbytes του PDF αρχείου σε hex πριν κρυπτογραφηθεί.<br><br>
 
 IV                 = `61f6ef5c567fbcfb99961becdd0954e0` (16 bytes) <br>
 Magic Bytes = `255044462d312e370a25e2e3cfd30a34` (16 bytes)
+<br>
 
-
-
-
+```python 
+srand(1606212503) #αρχικοποίηση την στιγμή που έγινε generate το key απο το ransomware
+iv=bytes.fromhex('61f6ef5c567fbcfb99961becdd0954e0') 
+magicb=b'255044462d312e370a25e2e3cfd30a34' # τα magic bytes σε μια μεταβλητή τύπου bytes
+KEYSIZE=16 #Το μήκος του key σε μια global μεταβλητή
+```
