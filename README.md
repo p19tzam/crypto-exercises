@@ -136,9 +136,7 @@ KEYSIZE=16 #Αρχικοποίηση το μήκος του key σε μια glob
 ```
 <br>
 
-Ανοίγω το encrypted pdf αρχείο για ανάγνωση μόνο σε binary format.
-
 ```python
-with open('important.enc.pdf','rb') as encrypted_pdf_file:
+with open('important.enc.pdf','rb') as encrypted_pdf_file: #Ανοίγω το encrypted pdf αρχείο για ανάγνωση μόνο σε binary format.
 	ciphertext=encrypted_pdf_file.read()
 ```
