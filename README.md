@@ -144,7 +144,8 @@ with open('important.enc.pdf','rb') as encrypted_pdf_file: #Ανοίγω το en
 <br>
 
 
-Όπως βλέπουμε στο παρακάτω κομμάτι κώδικα έχουμε ενα for loop που ξεκινάει απο τον αριθμό `1606212503` δηλαδή ξεκινάει απο το [seed](https://github.com/p19tzam/crypto-2/blob/main/README.md#seed) που αρχικοποιώ παραπάνω και σε κάθε loop το [seed](https://github.com/p19tzam/crypto-2/blob/main/README.md#seed) μας ανεβαίνει +1 κάθε φορά. Στην ουσία όταν αλλάζει το [seed](https://github.com/p19tzam/crypto-2/blob/main/README.md#seed) ταυτόχρονα είναι σαν αλλάζει 
+Όπως βλέπουμε στο παρακάτω κομμάτι κώδικα έχουμε ενα for loop που ξεκινάει απο τον αριθμό `1606212503` δηλαδή ξεκινάει απο το [seed](https://github.com/p19tzam/crypto-2/blob/main/README.md#seed) που αρχικοποιώ παραπάνω και σε κάθε loop το [seed](https://github.com/p19tzam/crypto-2/blob/main/README.md#seed) μας ανεβαίνει +1 κάθε φορά. Στην ουσία όταν αλλάζει το [seed](https://github.com/p19tzam/crypto-2/blob/main/README.md#seed) ταυτόχρονα είναι σαν αλλάζει η ώρα αλλα σε μορφή epoch.
+Και τέλος αυτού του κομματιού κανουμε νεα αρχικοποίηση κάθε φορα για την νεα στιγμή που έγινε generate το key απο το ransomware
 
 
 ```python
