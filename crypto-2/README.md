@@ -95,7 +95,7 @@ return key
 
 <br>
 
-Πρώτα απο όλα πρέπει να βρούμε το “σωστό” [seed](https://github.com/p19tzam/crypto-2/blob/main/README.md#seed) δηλαδή πρέπει να βρούμε το epoch(την ημερομηνία και την ώρα που δημιούργησε το key το ransomware) και να το κάνουμε convert σε unix time.
+Πρώτα απο όλα πρέπει να βρούμε το “σωστό” [seed](https://github.com/p19tzam/crypto-2/blob/main/crypto-2/README.md#seed) δηλαδή πρέπει να βρούμε το epoch(την ημερομηνία και την ώρα που δημιούργησε το key το ransomware) και να το κάνουμε convert σε unix time.
 
 <br>
 
@@ -113,7 +113,7 @@ return key
 Τώρα θα πρέπει να μετατρέψουμε αυτο το date: `Tue, Nov 24 2020 17:08:23` σε epoch. <br>
 Αυτό μπορούμε να το κάνουμε είτε με script είτε online. <br>
 
-Το σωστό [seed](https://github.com/p19tzam/crypto-2/blob/main/README.md#seed) είναι: `1606212503` δηλαδή είναι ο αριθμός που θα βάλουμε στην [srand()](https://github.com/p19tzam/crypto-2/blob/main/README.md#srand-seed) για να κάνουμε αρχικοποίηση την στιγμή που έγινε generate το key απο το ransomware.
+Το σωστό [seed](https://github.com/p19tzam/crypto-2/blob/main/crypto-2/README.md#seed) είναι: `1606212503` δηλαδή είναι ο αριθμός που θα βάλουμε στην [srand()](https://github.com/p19tzam/crypto-2/blob/main/crypto-2/README.md#seed) για να κάνουμε αρχικοποίηση την στιγμή που έγινε generate το key απο το ransomware.
 
 <br>
 <br>
@@ -144,10 +144,10 @@ with open('important.enc.pdf','rb') as encrypted_pdf_file: #Ανοίγω το en
 <br>
 
 
-Όπως βλέπουμε στο παρακάτω κομμάτι κώδικα έχουμε ενα for loop που ξεκινάει απο τον αριθμό `1606212503` δηλαδή ξεκινάει απο το [seed](https://github.com/p19tzam/crypto-2/blob/main/README.md#seed) που αρχικοποιώ παραπάνω και σε κάθε loop το [seed](https://github.com/p19tzam/crypto-2/blob/main/README.md#seed) μας ανεβαίνει +1 κάθε φορά. Στην ουσία όταν αλλάζει το [seed](https://github.com/p19tzam/crypto-2/blob/main/README.md#seed) ταυτόχρονα είναι σαν να αλλάζει η ώρα αλλα σε μορφή epoch.
+Όπως βλέπουμε στο παρακάτω κομμάτι κώδικα έχουμε ενα for loop που ξεκινάει απο τον αριθμό `1606212503` δηλαδή ξεκινάει απο το [seed](https://github.com/p19tzam/crypto-2/blob/main/crypto-2/README.md#seed) που αρχικοποιώ παραπάνω και σε κάθε loop το [seed](https://github.com/p19tzam/crypto-2/blob/main/crypto-2/README.md#seed) μας ανεβαίνει +1 κάθε φορά. Στην ουσία όταν αλλάζει το [seed](https://github.com/p19tzam/crypto-2/blob/main/crypto-2/README.md#seed) ταυτόχρονα είναι σαν να αλλάζει η ώρα αλλα σε μορφή epoch.
 Και τέλος αυτού του κομματιού κανουμε νεα αρχικοποίηση κάθε φορα για την νεα στιγμή που έγινε generate το key απο το ransomware.<br>
 
-Για να υλοποιήσω το start του for απο τον αριθμό του [seed](https://github.com/p19tzam/crypto-2/blob/main/README.md#seed) που θέλω χρισημοποίησα το itertools module και το .count() function.<br>
+Για να υλοποιήσω το start του for απο τον αριθμό του [seed](https://github.com/p19tzam/crypto-2/blob/main/crypto-2/README.md#seed) που θέλω χρισημοποίησα το itertools module και το .count() function.<br>
 
 ```python
 import itertools
