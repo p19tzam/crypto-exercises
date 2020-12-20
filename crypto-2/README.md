@@ -5,7 +5,7 @@
 Η `srand(seed)` και η `rand()` είναι python implementations της `srand()` και `rand()` απο την C.
 Διαφορετικά αυτό το πράγμα δεν μπορεί να δουλέψει γιατί δεν χρησιμοποιούν τις ίδιες random η C με την python. Επομένως οτι seed να βάλουμε στην python στην αντίστοιχη random δεν θα δουλέψει.
 
-
+ 
 ```python
 from ctypes import c_int, c_uint
 
