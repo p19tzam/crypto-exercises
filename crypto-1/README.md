@@ -28,15 +28,15 @@ def menu():
 ```python
 from affineCipher import * # Στο main πρόγραμμα.
 
-def encryptAFF(myKey, myMessage):
+def encryptAFF(myKey, myMessage): # Κάνει encrypt με ορίσματα το μήνυμα και το key που έχει γίνει generate.
     translated = encryptMessage(myKey, myMessage)
     return translated
 
-def decryptAFF(myMessage, myKey):
+def decryptAFF(myMessage, myKey): # Κάνει decrypt με ορίσματα το μήνυμα και το key που έχει γίνει generate.
     translated = decryptMessage(myKey, myMessage)
     return translated
 
-def getRandomKeyaAFF():
+def getRandomKeyaAFF(): # Κάνει generate ενα random key για τον affine
     while True:
         keyA = random.randint(2, len(SYMBOLS))
         keyB = random.randint(2, len(SYMBOLS))
@@ -67,7 +67,7 @@ os.system("clear") # και ξανα καθαρίζει το terminal
 Μετά απο όλα αυτά ξεκινάω μια if,elif,else που η κάθε μια αντικατοπτρίζει τις επιλογές του χρήστη πχ αν το `choice==”0”` τοτε έχουμε τον affine για encrypt και decrypt αν `choice==”1”` τοτε έχουμε τον vigerene για encrypt και decrypt και στο `else` έχουμε τον substitution επίσης για encrypt και decrypt..  <br>
 
 Έχουμε και τις εξής πληροφορίες.. <br>
-Οτι ο `affine` και ο `substitution` έχουν δυναμικο κλειδι δηλαδή κάθε φορά που χρισημοποιούμε το πρόγραμμα θα γίνει generate ενα random key απο τις συναρτήσεις που έχουμε στους encrypt και decrypt αλγορίθμους που μας έδωσε ο καθηγητής.
+Οτι ο `affine` και ο `substitution` έχουν δυναμικο κλειδι δηλαδή κάθε φορά που χρησιμοποιούμε το πρόγραμμα θα γίνει generate ενα random key απο τις συναρτήσεις που έχουμε στους encrypt και decrypt αλγορίθμους που μας έδωσε ο καθηγητής ενώ ο `vigerene` έχει στατικό κλειδί.
 
 
 
