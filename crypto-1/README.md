@@ -103,5 +103,18 @@ os.system("clear") # και ξανα καθαρίζει το terminal
 Έχουμε και τις εξής πληροφορίες.. <br>
 Οτι ο `affine` και ο `substitution` έχουν δυναμικο κλειδι δηλαδή κάθε φορά που χρησιμοποιούμε το πρόγραμμα θα γίνει generate ενα random key απο τις συναρτήσεις που έχουμε στους encrypt και decrypt αλγορίθμους που μας έδωσε ο καθηγητής ενώ ο `vigerene` έχει στατικό κλειδί.
 
+<br>
 
-
+```python
+if choice=="0": #Affine
+        key=getRandomKeyaAFF() # Καλείται η συνάρτηση [getRandomKeyaAFF()](https://github.com/p19tzam/crypto-exercises/blob/main/crypto-1/README.md#affinecipherpy)
+        os.system("clear")
+        print "[Affine Cipher]\n"
+        message=raw_input("Please type the message to be encrypted: ")
+        print "\nGenerating Random key for Affine cipher...\n"
+        encryptedMsg = encryptAFF(key, message)
+        decryptedMsg = decryptAFF(encryptedMsg,key)
+        print "The ciphertext is: ",encryptedMsg
+        print "The plaintext is: ",decryptedMsg
+        print ""
+```
