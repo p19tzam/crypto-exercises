@@ -21,11 +21,53 @@ def menu():
 
 <br>
 
+<hr>
+
+### affineCipher.py
+
+```python
+from affineCipher import * # Στο main πρόγραμμα.
+
+def encryptAFF(myKey, myMessage):
+    translated = encryptMessage(myKey, myMessage)
+    return translated
+
+def decryptAFF(myMessage, myKey):
+    translated = decryptMessage(myKey, myMessage)
+    return translated
+
+def getRandomKeyaAFF():
+    while True:
+        keyA = random.randint(2, len(SYMBOLS))
+        keyB = random.randint(2, len(SYMBOLS))
+        if gcd(keyA, len(SYMBOLS)) == 1:
+            return keyA * len(SYMBOLS) + keyB
+
+```
+
+<hr>
+
+
+
+
+
+
 # Main program
 
 ```python
 os.system("clear") # Καθαρίζει το terminal όταν ξεκινάει το πρόγραμμα.
 menu() # Κλήση συνάρτησης menu() για να εμφανίσει το menu για επιλογή.
-choice=raw_input("Choice:>> ") # Ζητάει απο τον χρήστη την επιλογή σε string
+choice=raw_input("Choice:>> ") # Ζητάει απο τον χρήστη το input σε string
 choice=menuChoiceCheck(choice) # και εδώ γίνεται κλήση της συνάρτησης menuChoiceCheck(choice)
+os.system("clear") # και ξανα καθαρίζει το terminal
 ``` 
+
+<br>
+
+Μετά απο όλα αυτά ξεκινάω μια if,elif,else που η κάθε μια αντικατοπτρίζει τις επιλογές του χρήστη πχ αν το `choice==”0”` τοτε έχουμε τον affine για encrypt και decrypt αν `choice==”1”` τοτε έχουμε τον vigerene για encrypt και decrypt και στο `else` έχουμε τον substitution επίσης για encrypt και decrypt..  <br>
+
+Έχουμε και τις εξής πληροφορίες.. <br>
+Οτι ο `affine` και ο `substitution` έχουν δυναμικο κλειδι δηλαδή κάθε φορά που χρισημοποιούμε το πρόγραμμα θα γίνει generate ενα random key απο τις συναρτήσεις που έχουμε στους encrypt και decrypt αλγορίθμους που μας έδωσε ο καθηγητής.
+
+
+
