@@ -105,14 +105,15 @@ os.system("clear") # και ξανα καθαρίζει το terminal
 
 <br>
 
+[affineCipher.py](https://github.com/p19tzam/crypto-exercises/blob/main/crypto-1/README.md#affinecipherpy)
 ```python
 if choice=="0": #Affine
-        key=getRandomKeyaAFF() # Καλείται η συνάρτηση [getRandomKeyaAFF()](https://github.com/p19tzam/crypto-exercises/blob/main/crypto-1/README.md#affinecipherpy)
-        os.system("clear")
+        key=getRandomKeyaAFF() # Καλείται η συνάρτηση getRandomKeyaAFF() για να κάνει generate ενα key
+        os.system("clear") # clear το terminal
         print "[Affine Cipher]\n"
-        message=raw_input("Please type the message to be encrypted: ")
+        message=raw_input("Please type the message to be encrypted: ") # Ζητάει απο τον χρήστη να δώσει ενα μήνυμα για encrypt και decrypt
         print "\nGenerating Random key for Affine cipher...\n"
-        encryptedMsg = encryptAFF(key, message)
+        encryptedMsg = encryptAFF(key, message) 
         decryptedMsg = decryptAFF(encryptedMsg,key)
         print "The ciphertext is: ",encryptedMsg
         print "The plaintext is: ",decryptedMsg
