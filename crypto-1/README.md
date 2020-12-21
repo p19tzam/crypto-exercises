@@ -23,4 +23,9 @@ def menu():
 
 # Main program
 
-
+```python
+os.system("clear") # Καθαρίζει το terminal όταν ξεκινάει το πρόγραμμα.
+menu() # Κλήση συνάρτησης menu() για να εμφανίσει το menu για επιλογή.
+choice=raw_input("Choice:>> ") # Ζητάει απο τον χρήστη την επιλογή σε string
+choice=menuChoiceCheck(choice) # και εδώ γίνεται κλήση της συνάρτησης menuChoiceCheck(choice)
+``` 
