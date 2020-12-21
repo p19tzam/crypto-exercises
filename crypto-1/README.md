@@ -113,9 +113,28 @@ if choice=="0": #Affine
         print "[Affine Cipher]\n"
         message=raw_input("Please type the message to be encrypted: ") # Ζητάει απο τον χρήστη να δώσει ενα μήνυμα για encrypt και decrypt
         print "\nGenerating Random key for Affine cipher...\n"
-        encryptedMsg = encryptAFF(key, message) 
-        decryptedMsg = decryptAFF(encryptedMsg,key)
+        encryptedMsg = encryptAFF(key, message) # Κάνει encrypt το μήνυμα 
+        decryptedMsg = decryptAFF(encryptedMsg,key) # Κάνει decrypt το μήνυμα
         print "The ciphertext is: ",encryptedMsg
         print "The plaintext is: ",decryptedMsg
         print ""
 ```
+
+Αυτό γίνεται και για τον `substitution` αλγόριθμο επίσης. [substitutionCipher.py](https://github.com/p19tzam/crypto-exercises/blob/main/crypto-1/README.md#substitutioncipherpy)
+
+<br>
+
+```python
+elif choice=="1": #Vigerene
+        os.system("clear") 
+        print "[Vigerene Cipher]\n"
+        message=raw_input("Please type the message to be encrypted: ")
+        print "\n\n"
+        encryptedMsg = encryptVIG('P2019213', message) # Η διαφορά με τους προηγούμενους αλγορίθμους είναι οτι εδώ οπως βλέπουμε έχουμε στατικό κλειδί ΠΑΝΤΑ.
+        decryptedMsg = decryptVIG('p2019213',encryptedMsg)
+        print "The ciphertext is: ",encryptedMsg
+        print "The plaintext is: ",decryptedMsg
+        print ""
+```
+
+[Source code](https://github.com/p19tzam/crypto-exercises/blob/main/crypto-1/main.py)
