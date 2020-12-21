@@ -48,15 +48,17 @@ def getRandomKeyaAFF(): # Κάνει generate ενα random key για τον af
 ### substitutionCipher.py
 
 ```python
-def decryptSUB(myMessage, myKey):
+from substitutionCipher import *  # Στο main πρόγραμμα.
+
+def decryptSUB(myMessage, myKey): # Κάνει decrypt με ορίσματα το μήνυμα και το key που έχει γίνει generate.
     translated = decryptMessage(myKey, myMessage)
     return translated
 
-def encryptSUB(myMessage,myKey):
+def encryptSUB(myMessage,myKey): # Κάνει encrypt με ορίσματα το μήνυμα και το key που έχει γίνει generate.
     translated = encryptMessage(myKey, myMessage)
     return translated
 
-def getRandomKeySUB():
+def getRandomKeySUB(): # Κάνει decrypt με ορίσματα το μήνυμα και το key που έχει γίνει generate.
     key = list(LETTERS)
     random.shuffle(key)
     return ''.join(key)
