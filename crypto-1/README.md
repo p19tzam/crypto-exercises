@@ -64,6 +64,21 @@ def getRandomKeySUB(): # Κάνει decrypt με ορίσματα το μήνυ�
     return ''.join(key)
 ```
 
+### vigenereCipher.py
+
+```python 
+from vigenereCipher import * # Στο main πρόγραμμα.
+
+def encryptVIG(myKey,myMessage): # Κάνει encrypt με ορίσματα το μήνυμα και το key που έχει γίνει generate.
+    translated = encryptMessage(myKey, myMessage)
+    return translated
+
+def decryptVIG(myKey,myMessage): # Κάνει decrypt με ορίσματα το μήνυμα και το key που έχει γίνει generate.
+    translated = decryptMessage(myKey, myMessage)
+    return translated
+```
+
+
 <hr>
 
 
