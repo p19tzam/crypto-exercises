@@ -18,7 +18,7 @@ from Crypto.Util.Padding import unpad
 private_key=RSA.import_key(open('PrivateKey.pem', 'r').read())
 ```
 Αρχικοποίηση του private key στον server για την αποκρυπτογράφηση του key. \
-Χρησιμοποιώ το RSA.import_key για να κάνω read το RSA key που έχω κάνει generate απο τον κώδικα [https://github.com/p19tzam/crypto-exercises/blob/main/crypto-3/scripts/GenerateRSA.py](generate.py).
+Χρησιμοποιώ το RSA.import_key για να κάνω read το RSA key που έχω κάνει generate απο τον κώδικα [generate.py](https://github.com/p19tzam/crypto-exercises/blob/main/crypto-3/scripts/GenerateRSA.py).
 
 ### main
 
