@@ -43,8 +43,8 @@ while true:
     	data=data.split('\n') # Διαχωρίζω τα string data που δέχομαι με newline
 
     	rsaEnckey=bytes.fromhex(data[0]) # 0=rsa encrypted key
-    	iv=bytes.fromhex(data[1]) # 1= iv for decryption
-    	ciphertext=bytes.fromhex(data[2]) # 2 ciphertext for message decryption
+    	iv=bytes.fromhex(data[1]) # 1=iv for decryption
+    	ciphertext=bytes.fromhex(data[2]) # 2=ciphertext for message decryption
        
     	rsaKeydecrypt=PKCS1_OAEP.new(key=private_key) # το ciphertext του rsa encryption και δίνω 
     	decrypted_key=rsaKeydecrypt.decrypt(rsaEnckey) # decrypt rsa και έχουμε το key
@@ -56,3 +56,54 @@ while true:
     	decrypted_msg=binary_plaintext.decode() # decode απο bytes σε text
     	print(decrypted_msg) # print
 ```
+
+[Source code](https://github.com/p19tzam/crypto-exercises/blob/main/crypto-3/scripts/server.py)
+
+# Client
+
+```python
+#!/usr/bin/env python3 
+import socket, os.path, datetime, sys, rsa
+from Crypto.Cipher import AES
+from Crypto.Util.Padding import pad
+from Crypto.Random import get_random_bytes
+from Crypto.PublicKey import RSA
+from Crypto.Cipher import PKCS1_OAEP
+```
+
+Στις πρώτες γραμμές κώδικα κάνω import τα modules για crypto και rsa(PKCS1_OAEP). Public key cryptography standard 1(ο αριθμός 1 αντικατοπτρίζει τον RSA). 
+
+```python
+key=get_random_bytes(16) # generate random 16 bytes key
+iv=get_random_bytes(16) # generate random 16 bytes key
+public_key=RSA.import_key(open('PublicKey.pem', 'r').read()) # Αρχικοποίηση του public key στον client για την κρυπτογράφηση του key. \
+```
+
+Χρησιμοποιώ το RSA.import_key για να κάνω read το RSA key που έχω κάνει generate απο τον κώδικα 
+
+
+```python
+    host = '127.0.0.1' 
+    port = 50033
+
+    s = socket.socket()
+    s.connect((host, port))
+
+    cipherRSA=PKCS1_OAEP.new(key=public_key)
+    ciphertextRSA=cipherRSA.encrypt(key)
+
+    msg=str(input("Encrypted message for server: "))
+    binMsg=msg.encode('utf-8') #convert to bytes
+
+    cipher=AES.new(key, AES.MODE_CBC,iv)
+    ciphertext=cipher.encrypt(pad(binMsg, AES.block_size)) #ciphertext
+
+    data=str(ciphertextRSA.hex())+"\n"+str(iv.hex())+"\n"+str(ciphertext.hex())+"\n"
+
+    s.send(data.encode())
+    ack = s.recv(4096).decode()
+    print("I received from server this message:",ack)
+
+    s.close() # close the socket
+```
+
