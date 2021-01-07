@@ -11,7 +11,7 @@ from Crypto.Cipher import AES
 from Crypto.Util.Padding import unpad
 ```
 
-Στις πρώτες γραμμές κώδικα κάνω import τα modules για crypto και rsa(PKCS1_OAEP). Public key cryptography standard 1(ο αριθμός 1 αντικατοπτρίζει τον RSA). \
+Στις πρώτες γραμμές κώδικα κάνω import τα modules για crypto και rsa(PKCS1_OAEP). Public key cryptography standard 1(ο αριθμός 1 αντικατοπτρίζει τον RSA). 
 
 
 ```python
@@ -35,23 +35,24 @@ s.listen(1) # εδώ λέει οτι δέχεται 1 client
 
 
 ```python
+while true:
     	c, addr = s.accept() # κάνει accept τα connections απο client
     	print("Connection from: " + str(addr))
     	data = c.recv(4096).decode()  # δέχεται data απο το client και έχει buffer 4096 bytes και κάνει decode.
     
-    	data=data.split('\n')
+    	data=data.split('\n') # Διαχωρίζω τα string data που δέχομαι με newline
 
-    	rsaEnckey=bytes.fromhex(data[0])
-    	iv=bytes.fromhex(data[1])
-    	ciphertext=bytes.fromhex(data[2])
+    	rsaEnckey=bytes.fromhex(data[0]) # 0=rsa encrypted key
+    	iv=bytes.fromhex(data[1]) # 1= iv for decryption
+    	ciphertext=bytes.fromhex(data[2]) # 2 ciphertext for message decryption
        
-    	rsaKeydecrypt=PKCS1_OAEP.new(key=private_key)
-    	decrypted_key=rsaKeydecrypt.decrypt(rsaEnckey)
+    	rsaKeydecrypt=PKCS1_OAEP.new(key=private_key) # το ciphertext του rsa encryption και δίνω 
+    	decrypted_key=rsaKeydecrypt.decrypt(rsaEnckey) # decrypt rsa και έχουμε το key
 
-    	cipher=AES.new(decrypted_key, AES.MODE_CBC,iv)
+    	cipher=AES.new(decrypted_key, AES.MODE_CBC,iv) # κάνει decrypt το key σαν cleartext
 
-    	binary_plaintext=unpad(cipher.decrypt(ciphertext), AES.block_size)
+    	binary_plaintext=unpad(cipher.decrypt(ciphertext), AES.block_size) # και κάνουμε decrypt το message απο τον client.
 
-    	decrypted_msg=binary_plaintext.decode()
-    	print(decrypted_msg)
+    	decrypted_msg=binary_plaintext.decode() # decode απο bytes σε text
+    	print(decrypted_msg) # print
 ```
